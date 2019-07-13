@@ -1,0 +1,11 @@
+<li>
+    {{this.dataValues.name}}
+
+    <input type="text" name="customer_name" id="customerName" placeholder="Customer">
+
+    <button class="change-devoured btn btn-success" data-id="{{this.dataValues.id}}" data-newdevoured="{{hungry}}">
+        {{#if hungry}}DEVOUR{{else}}ORDER AGAIN{{/if}}
+    </button>
+
+
+</li>

@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "snatch",
+    "host": "mariadb",
+    "port": "3306",
+    "dialect": "mysql"
+  },
+ 
+  "production": {
+    "username": "fhvw5s4q9jgo31so",
+    "password": "p2getaxuwu26q8f4",
+    "database": "qz367hb559xrngin",
+    "host": "mwgmw3rs78pvwk4e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  }
+}

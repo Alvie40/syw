@@ -1,0 +1,42 @@
+
+<script id="tpl_tblEmployee" type="text/template">
+  <table class="mdl-data-table mdl-shadow--2dp" style="width:100%">
+      <thead> 
+          <th>id</th> 
+          <th>First Name</th> 
+          <th>Last Name</th> 
+          <th>Email</th>           
+      </thead> 
+      <tbody> 
+          {{#list}} 
+          <tr> 
+              <td>{{employeeID}}</td> 
+              <td>{{employeeFirstName}}</td> 
+              <td>{{employeeLastName}}</td> 
+              <td>{{employeeEmail}}</td>               
+          </tr> 
+          {{/list}} 
+      </tbody> 
+  </table> 
+</script>
+
+<script id="tpl_tblCustomer" type="text/template">
+  <table class="mdl-data-table mdl-shadow--2dp" style="width:100%">
+      <thead> 
+          <th style="width:1%">id</th> 
+          <th style="width:40%;vertical-align:left">Name</th> 
+          <th style="width:1%">Email</th>
+          <th>&nbsp;</th>           
+      </thead> 
+      <tbody> 
+          {{#list}} 
+          <tr> 
+              <td>{{customerID}}</td> 
+              <td>{{customerFirstName}} {{customerLastName}}</td>               
+              <td>{{customerEmail}}</td>
+              <td><input type="button" value="Orders" class="btn btn-primary py-1 px-1"><td>               
+          </tr> 
+          {{/list}} 
+      </tbody> 
+  </table> 
+</script>

@@ -1,0 +1,41 @@
+version: '3.3'
+services:
+    srv-snatch:
+        image: snatch-app
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        container_name: container-snatch-app
+        environment:                        
+            - DB_HOST=maria-db
+            - DB_PORT=3306
+            - DB_NAME=snatch
+            - DB_USER=root
+            - DB_PWD=root        
+        ports:
+            - 80:8080
+        networks:
+            - mynetwork
+    maria-db:        
+        image: mariadb
+        container_name: container-snatch-db
+        environment:          
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=snatch
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=root        
+        volumes:
+            - snatchdb_volume:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        networks:
+            - mynetwork
+networks:
+    mynetwork: 
+        external: true
+volumes:
+    snatchdb_volume:
+        external: true
+
+# how create volume?    docker volume create --name snatchdb_volume
+# how create network?   docker network create -d bridge mynetwork 
