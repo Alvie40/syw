@@ -3,7 +3,7 @@ const exphbs = require("express-handlebars");
 const stripe = require('stripe')('sk_test_nhg1xRWcHeYcr8i0euL3wdk900JsmB6rfD');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8088;
 // const keys = require('./config/keys');
 const db = require("./app/models");
 
