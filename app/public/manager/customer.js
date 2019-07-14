@@ -31,7 +31,7 @@ Snatch.Customer = {
 
   service: {
 
-    add: function(data){
+    add: function(data, cb){
       var result = false;
       $.ajax({
         url: "/api/customer/add",
@@ -39,9 +39,7 @@ Snatch.Customer = {
         async:false,
         dataType : "json",
         data: data,
-        success: function( response ) {
-          result = response;
-        }
+        success: cb
       });
       return result;
     },
@@ -55,7 +53,7 @@ Snatch.Customer = {
         dataType : "json",
         data: data,
         success: function( response ) {
-          console.log( response );
+         
         }
       });
       return result;
@@ -70,13 +68,14 @@ Snatch.Customer = {
         dataType : "json",
         data: data,
         success: function( response ) {
-          console.log( response );
+
         }
       });
       return result;
     },
 
     list: function(data){
+      data.customerFirstName = '';
       var result = false;
       $.ajax({
         url: "/api/customer/list",
@@ -107,9 +106,11 @@ Snatch.Customer = {
         customerFirstName:$("#txt_customerFirstName").val(),
         customerLastName:$("#txt_customerLastName").val(),
         customerEmail: $("#txt_customerEmail").val(),
-        customerAddress: $("#txt_customerAddress").val()
+        customerAddress: $("#txt_customerAddress").val(),
+        customerImage: $("#txt_imgFile").val()
+      }, function(res) {
+        Snatch.Customer.render.list();
       });
-      Snatch.Customer.render.list();
     },
 
     get: function(){

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
     "mysql2": "^1.6.5",
     "nutrient-database": "^1.1.8",
     "sequelize": "^5.8.6",
-    "stripe": "^7.4.0"
+    "stripe": "^7.4.0",
+    "youtube-playlist": "^1.0.2"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"

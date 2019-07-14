@@ -37,7 +37,7 @@ Snatch.Employee = {
         dataType : "json",
         data: data,
         success: function( response ) {
-          console.log( response );
+          
         }
       });
       return result;
@@ -112,6 +112,7 @@ Snatch.Employee = {
         return person.firstName + " " + person.lastName;
       });
       */
+      console.log('list customer dataaaa===>>', result.rowss)
       $("#div_tblEmployee").html(tpl({list: result.rows}));
     },
 

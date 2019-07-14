@@ -1,6 +1,9 @@
+const routesSite = require('express').Router();
+const ytlist = require('youtube-playlist');
+const playListUrl = 'https://www.youtube.com/watch?v=U3JWFgTjq94&list=PLqxeWGIeCYE4X6C3cSl7UlIxwTQDAbc-F';
+
 const db = require("../../models");
 const { Partner, Product, Employee, Customer, Provider, Request, Order } = db;
-const routesSite = require('express').Router();
 
 routesSite.get('/site', (req, res) => {
   res.status(200).json({ message: 'Connected!' });
@@ -8,6 +11,12 @@ routesSite.get('/site', (req, res) => {
 
 routesSite.get("/about",function (req, res) {
     res.render("about",{});
+});
+
+routesSite.get("/video",function (req, res) {
+    ytlist(playListUrl, 'url').then(resp => {
+        res.render("video", {videos: resp.data.playlist.map(v => ({url: `https://www.youtube.com/embed/${v.split('=')[1]}`}))});
+    });
 });
 
 routesSite.get("/blog",function (req, res) {
@@ -18,9 +27,6 @@ routesSite.get("/donation",function (req, res) {
     res.render("donation");
 });
 
-routesSite.get("/donation2",function (req, res) {
-    res.render("donation", {layout: "layout-green" });
-});
 
 routesSite.get("/contact",function (req, res) {
     res.render("contact");

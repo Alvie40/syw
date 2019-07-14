@@ -12,6 +12,8 @@ module.exports = function (sequelize, DataTypes) {
         customerFirstName:   { type: DataTypes.STRING },
         customerLastName:    { type: DataTypes.STRING },
         customerPhoneNumber: { type: DataTypes.STRING },
+        customerOrder: { type: DataTypes.STRING },
+        customerOrderDate: { type: DataTypes.STRING },
     });
 
     return Customer;
