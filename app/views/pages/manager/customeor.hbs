@@ -1,0 +1,66 @@
+<section class="ftco-section contact-section">
+
+  <div class="container mt-1">
+
+    <div class="row block-9">
+      <div class="col-md-7 contact-info">
+
+
+        <div style="width:100%" class="demo-card-wide mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Customers</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+
+            <div id="div_tblCustomer" style="width:100%">Loading...</div>
+
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <center>
+              <button class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">keyboard_arrow_left</i>
+              </button>
+              <button class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>
+            </center>
+
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="col-md-1"></div>
+
+      <div class="col-md-4">
+        <form action="#">
+          <div class="form-group">
+            <input id="txt_customerFirstName" type="text" class="form-control" placeholder="First Name">
+          </div>
+          <div class="form-group">
+            <input id="txt_customerLastName" type="text" class="form-control" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+            <input id="txt_customerEmail" type="text" class="form-control" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input id="txt_customerAddress" type="text" class="form-control" placeholder="Address">
+          </div>
+          <div class="form-group">
+            <input id="txt_imgFile" type="file" accept="image/*" class="form-control" placeholder="Select Image">
+          </div>
+          <div class="form-group">
+            <input type="button" value="Register Customer" class="btn-customer-add btn btn-primary py-3 px-5">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function ($) {
+    Snatch.Customer.render.list();
+  });
+</script>
