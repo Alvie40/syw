@@ -34,7 +34,7 @@
       <div class="col-md-1"></div>
 
       <div class="col-md-4">
-        <form action="#">
+        <form id = "myform" action="#">
           <div class="form-group">
             <input id="txt_customerFirstName" type="text" class="form-control" placeholder="First Name">
           </div>
@@ -51,7 +51,7 @@
             <input id="txt_imgFile" type="file" accept="image/*" class="form-control" placeholder="Select Image">
           </div>
           <div class="form-group">
-            <input type="button" value="Register Customer" class="btn-customer-add btn btn-primary py-3 px-5">
+            <input type="button" value="Register Customer"  class="btn-customer-add btn btn-primary py-3 px-5">
           </div>
         </form>
       </div>
@@ -63,4 +63,5 @@
   $(document).ready(function ($) {
     Snatch.Customer.render.list();
   });
+$("#myform")[0].reset();
 </script>

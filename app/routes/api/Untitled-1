@@ -1,4 +1,2 @@
 options for saving media/images/pdf/videos: AWS s3, Cloudinary, Google Drive, Dropbox.
 database still remains mysql
-
-6am-10pm PST
