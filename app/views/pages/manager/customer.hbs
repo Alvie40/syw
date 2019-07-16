@@ -1,30 +1,44 @@
+
+<script>
+   function myFunctionBack() {
+  Snatch.Customer.paginate.previous();
+  };
+  function myFunctionNext() {
+  Snatch.Customer.paginate.next();
+  };
+</script>
+
+
 <section class="ftco-section contact-section">
 
 
-<div class="col-md-1"></div>
+  <div class="col-md-1"></div>
 
-      <div class="col-md-4">
-        <form action="#">
-          <div class="form-group">
-            <input id="txt_customerFirstName" type="text" class="form-control" placeholder="First Name">
-          </div>
-          <div class="form-group">
-            <input id="txt_customerLastName" type="text" class="form-control" placeholder="Last Name">
-          </div>
-          <div class="form-group">
-            <input id="txt_customerEmail" type="text" class="form-control" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <input id="txt_customerAddress" type="text" class="form-control" placeholder="Address">
-          </div>
-          <div class="form-group">
-            <input id="txt_imgFile" type="file" accept="image/*" class="form-control" placeholder="Select Image">
-          </div>
-          <div class="form-group">
-            <input type="button" value="Register Customer" class="btn-customer-add btn btn-primary py-3 px-5">
-          </div>
-        </form>
+  <div class="col-md-4">
+    <form action="#">
+      <div>
+        <h3>Customer data Entry</h3>
       </div>
+      <div class="form-group">
+        <input id="txt_customerFirstName" type="text" class="form-control" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <input id="txt_customerLastName" type="text" class="form-control" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <input id="txt_customerEmail" type="text" class="form-control" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input id="txt_customerAddress" type="text" class="form-control" placeholder="Address">
+      </div>
+      <div class="form-group">
+        <input id="txt_imgFile" type="file" accept="image/*" class="form-control" placeholder="Select Image">
+      </div>
+      <div class="form-group">
+        <input type="button" value="Register Customer" class="btn-customer-add btn btn-primary py-3 px-5">
+      </div>
+    </form>
+  </div>
 
 
 
@@ -45,10 +59,12 @@
           </div>
           <div class="mdl-card__actions mdl-card--border">
             <center>
-              <button class="mdl-button mdl-js-button mdl-button--icon">
+              <button  class="mdl-button mdl-js-button mdl-button--icon"
+                onclick="myFunctionBack()">
                 <i class="material-icons">keyboard_arrow_left</i>
               </button>
-              <button class="mdl-button mdl-js-button mdl-button--icon">
+              <button  class="mdl-button mdl-js-button mdl-button--icon"
+                onclick="myFunctionNext()">
                 <i class="material-icons">keyboard_arrow_right</i>
               </button>
             </center>
@@ -64,5 +80,7 @@
 <script>
   $(document).ready(function ($) {
     Snatch.Customer.render.list();
+    
   });
+ 
 </script>

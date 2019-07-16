@@ -1,7 +1,6 @@
+let indexPage = 0;
+
 Snatch.Customer = {
-
-
-  
 
   init: function() {
     this.callbacks();    
@@ -12,20 +11,26 @@ Snatch.Customer = {
     $(".btn-customer-get").on("click", Snatch.Customer.render.get);      
     $(".btn-customer-alt").on("click", Snatch.Customer.render.alt);      
     $(".btn-customer-list").on("click",Snatch.Customer.render.list);
+    $("#btn-customer-previous").on("click",Snatch.Customer.paginate.previous);
+    $("#btn-customer-next").on("click",Snatch.Customer.paginate.next);
   },
 
   paginate: {
     
-    indexPage: 0,
-    rowsPerPage: 3,
+    indexPage,
+    rowPerPage: 5,
 
     next: function(){
-      Snatch.Customer.paginate.indexPage++;
+      indexPage += 1;
+      console.log('new page', indexPage)
+      Snatch.Customer.render.list();
+      //Snatch.Customer.paginate.indexPage++;
     },
 
     previous: function(){
-      
-      Snatch.Customer.paginate.indexPage--;
+      indexPage = indexPage <= 0 ? 0 : indexPage-1;
+      Snatch.Customer.render.list();
+      //Snatch.Customer.paginate.indexPage--;
     }
   },
 
@@ -129,14 +134,15 @@ Snatch.Customer = {
     },
   
     list: function(){
+      console.log('got heree list')
       result = Snatch.Customer.service.list({
         customerFirstName: $("#txt_customerFirstName").val(),
-        indexPage: 0,
+        indexPage,
         rowPerPage: 5
       });
       var tpl = Handlebars.compile($("#tpl_tblCustomer").html());
       
-      console.info("tpl",tpl({list: result.rows}));
+      //console.info("tpl",tpl({list: result.rows}));
       /*
       var html = Handlebars.registerHelper('fullName', function(person) {
         return person.firstName + " " + person.lastName;

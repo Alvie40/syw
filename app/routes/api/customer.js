@@ -22,13 +22,14 @@ routesCustomer.post('/api/customer/alt', async (req, res) => {
 });
 
 routesCustomer.post('/api/customer/list', async (req, res) => {
+  const {indexPage, rowPerPage, customerFirstName} = req.body;
   try{
     const customer = await Customer.findAndCountAll({
       where: {
-        customerFirstName: {[Op.like]: req.body.customerFirstName+'%' }
+        customerFirstName: {[Op.like]: customerFirstName+'%' }
       },
-      offset: parseInt(req.body.indexPage),
-      limit: parseInt(req.body.rowPerPage)
+      offset: parseInt(indexPage * rowPerPage ),
+      limit: parseInt(rowPerPage)
     });
     res.status(200).json(customer);
   }catch(e){
